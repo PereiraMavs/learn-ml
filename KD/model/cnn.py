@@ -3,6 +3,14 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
+# specification of the CNN model
+# This is a simple CNN architecture for image classification tasks
+# It consists of two convolutional layers followed by two fully connected layers
+# The model is designed to work with CIFAR-10 dataset images (32x32 pixels)
+# The input is expected to have 3 channels (RGB)
+# The output is a tensor of shape (batch_size, 10) for 10 classes
+
+
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()

@@ -21,7 +21,17 @@ def test(model_path, testloader, batch_size=4, classes=None):
     
     net = cnn.get_model()
     net.load_state_dict(torch.load(model_path, weights_only=True))
-    outputs = net(images)
-    _, predicted = torch.max(outputs, 1)
-    print('Predicted: ', ' '.join(f'{classes[predicted[j]]:5s}' for j in range(batch_size)))
+    #outputs = net(images)
+    #_, predicted = torch.max(outputs, 1)
+    #print('Predicted: ', ' '.join(f'{classes[predicted[j]]:5s}' for j in range(batch_size)))
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for data in testloader:
+            images, labels = data
+            outputs = net(images)
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
 
+    print(f'Accuracy: {100 * correct / total:.2f}%')

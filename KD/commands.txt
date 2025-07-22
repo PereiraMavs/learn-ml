@@ -1,0 +1,50 @@
+# Train from scratch
+python3 train_teacher.py --train
+
+# Resume training from a previous model (loads weights only)
+python3 train_teacher.py --train --resume_training --pretrained_model_path trained_models/cnn_teacher.pth
+
+# Resume from a specific checkpoint (loads weights + optimizer + epoch)
+python3 train_teacher.py --train --resume_checkpoint trained_models/checkpoint_epoch_10.pth
+
+# Train with larger batch size and resume
+python3 train_teacher.py --train --batch_size 32 --resume_training
+
+#test teacher model
+
+
+
+ Train student from scratch
+python3 train_student.py --epochs 20
+
+# Continue training from a saved model
+python3 train_student.py --resume_model trained_models/student_model.pth --epochs 10
+
+# Resume from a specific checkpoint
+python3 train_student.py --resume_checkpoint trained_models/student_checkpoint_epoch_15.pth --epochs 10
+
+# Retrain with ART noise generation
+python3 train_student.py --resume_model trained_models/student_model.pth --epochs 5 --use_art
+
+# Test different student models
+python3 test_student.py --model_path trained_models/student_model.pth
+python3 test_student.py --model_path trained_models/student_model_retrained_epoch_10.pth
+python3 test_student.py --model_path trained_models/best_student_model.pth
+
+python3 train_student.py --epochs 20
+# Saves: trained_models/student_model_standard.pth
+#        trained_models/best_student_model_standard.pth
+
+# Train with ART method  
+python3 train_student.py --epochs 20 --use_art
+# Saves: trained_models/student_model_art.pth
+#        trained_models/best_student_model_art.pth
+
+# Test both models
+python3 test_student.py --model_path trained_models/student_model_standard.pth
+python3 test_student.py --model_path trained_models/student_model_art.pth
+
+
+Standard-
+Knowledge Transfer Success: 60.0% agreement with teacher
+Performance Retention: 65.4% of teacher's accuracy
