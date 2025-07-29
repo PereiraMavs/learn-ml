@@ -48,3 +48,85 @@ python3 test_student.py --model_path trained_models/student_model_art.pth
 Standard-
 Knowledge Transfer Success: 60.0% agreement with teacher
 Performance Retention: 65.4% of teacher's accuracy
+=============================================================
+New set experiments
+Standard: 90 epoch
+Hard Prediction Agreement: 51.40%
+Average KL Divergence: 1.6686
+Average MSE Loss: 0.0670
+
+Knowledge Transfer Success: 51.4% agreement with teacher
+Performance Retention: 55.7% of teacher's 
+
+=== Agreement by Class ===
+plane: 62.1% (64/103)
+car: 39.3% (35/89)
+bird: 29.0% (29/100)
+cat: 42.7% (44/103)
+deer: 56.7% (51/90)
+dog: 39.5% (34/86)
+frog: 62.5% (70/112)
+horse: 49.0% (50/102)
+ship: 83.0% (88/106)
+truck: 50.5% (55/109)
+
+-----------------------------------------------------------------
+ART
+Hard Prediction Agreement: 50.46%
+Average KL Divergence: 1.7320
+Average MSE Loss: 0.0685
+
+Knowledge Transfer Success: 50.5% agreement with teacher
+Performance Retention: 55.0% of teacher's accuracy
+
+=== Agreement by Class ===
+plane: 56.3% (58/103)
+car: 46.1% (41/89)
+bird: 32.0% (32/100)
+cat: 43.7% (45/103)
+deer: 68.9% (62/90)
+dog: 38.4% (33/86)
+frog: 56.2% (63/112)
+horse: 42.2% (43/102)
+ship: 82.1% (87/106)
+truck: 44.0% (48/109)
+
+...................................................................
+Hard Prediction Agreement: 52.78%
+Average KL Divergence: 1.6948
+Average MSE Loss: 0.0669
+
+Knowledge Transfer Success: 52.8% agreement with teacher
+Performance Retention: 56.7% of teacher's accuracy
+
+=== Agreement by Class ===
+plane: 61.2% (63/103)
+car: 50.6% (45/89)
+bird: 37.0% (37/100)
+cat: 45.6% (47/103)
+deer: 72.2% (65/90)
+dog: 33.7% (29/86)
+frog: 69.6% (78/112)
+horse: 48.0% (49/102)
+ship: 84.9% (90/106)
+truck: 44.0% (48/109)
+.....................................................................
+
+Hard Prediction Agreement: 55.08%
+Average KL Divergence: 1.5171
+Average MSE Loss: 0.0619
+
+Knowledge Transfer Success: 55.1% agreement with teacher
+Performance Retention: 58.9% of teacher's accuracy
+
+=== Agreement by Class ===
+plane: 64.1% (66/103)
+car: 44.9% (40/89)
+bird: 38.0% (38/100)
+cat: 50.5% (52/103)
+deer: 78.9% (71/90)
+dog: 29.1% (25/86)
+frog: 69.6% (78/112)
+horse: 51.0% (52/102)
+ship: 90.6% (96/106)
+truck: 48.6% (53/109)

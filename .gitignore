@@ -1,0 +1,25 @@
+# Model directories
+KD/trained_models/
+KD/best_models/
+KD/weights/
+KD/checkpoints/
+KD/saved_models/
+# Source code directories
+
+# Data directories
+KD/data/
+KD/datasets/processed/
+KD/datasets/raw/
+# Logs and outputs
+KD/logs/
+KD/outputs/
+# Temporary files
+KD/temp/
+# Cache directories
+KD/cache/
+# Configuration files
+KD/config.yaml
+KD/settings.json        
+
+KD/__pycache__/
+KD/model/__pycache__/
